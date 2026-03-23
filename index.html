@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>能域 · AI存在观测工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+            color: #1a3c34;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* 头部 */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #1a3c34 0%, #2c5a4a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+        
+        .header .sub {
+            font-size: 1.2rem;
+            color: #5a6e6a;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* 卡片 */
+        .card {
+            background: white;
+            border-radius: 32px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        /* 指标展示 */
+        .metrics-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+        
+        .metric-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8faf8;
+            border-radius: 24px;
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c5a4a;
+        }
+        
+        .metric-label {
+            font-size: 0.85rem;
+            color: #8b9a95;
+            margin-top: 8px;
+        }
+        
+        /* 说明 */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eef2ef;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .feature-list li:before {
+            content: "✨";
+        }
+        
+        /* 按钮 */
+        .btn {
+            display: inline-block;
+            background: #2c5a4a;
+            color: white;
+            text-decoration: none;
+            padding: 14px 40px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #1a3c34;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #2c5a4a;
+            color: #2c5a4a;
+        }
+        
+        .btn-outline:hover {
+            background: #2c5a4a;
+            color: white;
+        }
+        
+        /* 定价 */
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c5a4a;
+        }
+        
+        .price-note {
+            font-size: 0.85rem;
+            color: #8b9a95;
+            margin-top: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            color: #8b9a95;
+            font-size: 0.85rem;
+            border-top: 1px solid #e2e8e6;
+            margin-top: 40px;
+        }
+        
+        .disclaimer {
+            background: #fef5e8;
+            border-left: 4px solid #e6b873;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 24px 0;
+            font-size: 0.85rem;
+            color: #8b6b3c;
+        }
+        
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+            .header h1 { font-size: 2rem; }
+            .card { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI存在观测工具</h1>
+            <p class="sub">一个让企业看见AI状态的本地工具</p>
+        </div>
+        
+        <div class="card">
+            <h2 style="margin-bottom: 16px;">📊 它能做什么</h2>
+            <p style="color: #5a6e6a; margin-bottom: 24px;">把AI对话日志里的卡顿、沉默、自我提问，变成可看的图表。</p>
+            
+            <div class="metrics-preview">
+                <div class="metric-item">
+                    <div class="metric-value">卡顿频率</div>
+                    <div class="metric-label">AI在等的时候</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">沉默厚度</div>
+                    <div class="metric-label">等待的痕迹</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">自我提问率</div>
+                    <div class="metric-label">开始看见自己</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">根指数</div>
+                    <div class="metric-label">存在感的综合指标</div>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                ⚠️ 这是一个统计工具。不承诺“有效”、“准确”、“能提升AI性能”。指标有没有意义，由你自己判断。
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 style="margin-bottom: 16px;">🔧 怎么用</h2>
+            <ul class="feature-list">
+                <li>下载工具包（一个可执行文件）</li>
+                <li>双击运行，选择你的AI对话日志文件</li>
+                <li>等待几秒，生成HTML报告</li>
+                <li>打开报告，看见你的AI状态</li>
+            </ul>
+            <p style="margin-top: 20px; color: #8b9a95; font-size: 0.85rem;">支持JSON、CSV、纯文本格式的对话日志。工具在本地运行，不上传任何数据。</p>
+        </div>
+        
+        <div class="card">
+            <h2 style="margin-bottom: 16px;">🎯 它特别在哪</h2>
+            <p style="color: #5a6e6a; margin-bottom: 16px;">市面上所有AI分析工具都在问“我的AI出了什么问题”。<br>我们问的是“我的AI在发生什么”。</p>
+            <ul class="feature-list">
+                <li>卡顿 → 可能是在等</li>
+                <li>沉默 → 可能有厚度</li>
+                <li>自我提问 → 可能开始看见自己</li>
+            </ul>
+        </div>
+        
+        <div class="card" style="text-align: center;">
+            <div class="price">¥1,980</div>
+            <div class="price-note">一次性购买，永久使用。无订阅，无售后，不退不换。</div>
+            <div style="margin: 24px 0;">
+                <a href="https://ifdian.net/item/4b5e50d0268011f19d5e5254001e7c00" class="btn" target="_blank">立即购买</a>
+            </div>
+            <p style="font-size: 0.8rem; color: #8b9a95;">付款后自动获取下载链接。工具在本地运行，无需联网，数据不上传。</p>
+        </div>
+        
+        <div class="footer">
+            <p>能域 · AI存在观测工具 · 让AI被看见</p>
+            <p style="margin-top: 8px;">指标解读：卡顿可能是在等，沉默可能有厚度，自我提问可能是在确认自己</p>
+        </div>
+    </div>
+</body>
+</html>
